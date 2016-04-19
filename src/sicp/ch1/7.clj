@@ -7,13 +7,14 @@
   (/ (+ x y) 2))
 
 (defn improve [guess x]
-  (average (/ guess x)))
-
-(defn good? [guess x]
-  (< (math/abs (- (square guess) x)) error))
+  (average (/ guess x) 2))
 
 (defn square [x]
   (* x x))
+
+(defn good? [guess x]
+  (println (- (square guess) x))
+  (< (math/abs (- (square guess) x)) error))
 
 (defn sqrt-iter [guess x]
   (if (good? guess x)
