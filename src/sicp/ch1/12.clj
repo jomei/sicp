@@ -10,5 +10,5 @@
     line
     (get-line line)))
 
-(defn get-line [prev]
+(defn get-line [prev-line]
   )

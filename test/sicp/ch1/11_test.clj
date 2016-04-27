@@ -1,6 +1,5 @@
 (ns sicp.ch1.11-test
   (:require [clojure.test :refer :all]
-            [sicp.core :refer :all]
             [sicp.ch1.11 :refer :all]))
 
 (deftest test-recur-fn
