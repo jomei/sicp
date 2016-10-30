@@ -40,7 +40,7 @@ defmodule Chapter1 do
 		end
 
 		defp rec(n) when n >= 3 do
-			rec(n-1) + rec(n-2) + rec(n-3)
+			rec(n - 1) + rec(n - 2) + rec(n - 3)
 		end
 
 		defp rec(n) when n < 3, do: n
@@ -62,15 +62,16 @@ defmodule Chapter1 do
 	defmodule Ex12 do
 		# pascal triangle
 		# n - line index
+		# all indexes starts with 0
 		def run(n) do
-			Enum.map(0..n, &(item(n, &1 + 1)))
+			Enum.map(0..n, &(item(n, &1)))
 		end
 
 		# pascal triangle item
 		# n - line index, k - position index
 		def item(n, k) when k == 0 or k == n, do: 1
 
-		def item(n, k), do: item(n - 1, k -1) + item(n - 1, k)
+		def item(n, k), do: item(n - 1, k - 1) + item(n - 1, k)
 	end
 	
 end

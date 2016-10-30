@@ -19,6 +19,7 @@ defmodule Chapter1Test do
 	end
 
 	test "ex_12" do
-		assert Chapter1.Ex12.run(3) == [1, 2, 3]
+		assert Chapter1.Ex12.item(4, 1) == 4
+		assert Chapter1.Ex12.run(3) == [1, 3, 3, 1]
 	end
 end
