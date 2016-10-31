@@ -22,4 +22,8 @@ defmodule Chapter1Test do
 		assert Chapter1.Ex12.item(4, 1) == 4
 		assert Chapter1.Ex12.run(3) == [1, 3, 3, 1]
 	end
+
+	test "ex_16" do
+		assert Chapter1.Ex16.fast_expt(3, 3) == 27
+	end
 end

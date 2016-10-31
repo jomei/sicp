@@ -74,4 +74,22 @@ defmodule Chapter1 do
 		def item(n, k), do: item(n - 1, k - 1) + item(n - 1, k)
 	end
 	
+
+	defmodule Ex16 do
+		def fast_expt(num, pow) do
+			iter num, pow, 1
+		end
+
+		defp iter(_num, pow, acc) when pow == 0, do: acc
+
+		defp iter(num, pow, acc) do
+			if rem(pow, 2) == 0 do
+				iter(num, div(pow, 2), acc * num)
+			else
+				iter(num, pow - 1, num * acc)
+			end
+		end
+
+		defp square(n), do: n * n
+	end
 end
