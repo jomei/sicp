@@ -26,4 +26,8 @@ defmodule Chapter1Test do
 	test "ex_16" do
 		assert Chapter1.Ex16.fast_expt(3, 3) == 27
 	end
+
+	test "ex_31" do
+		assert Chapter1.Ex31.factorial(3) == 6
+	end
 end

@@ -89,7 +89,22 @@ defmodule Chapter1 do
 				iter(num, pow - 1, num * acc)
 			end
 		end
+	end
 
-		defp square(n), do: n * n
+	defmodule Ex31 do
+		def product(a, b, fun, next) do
+			product_iter(a, b, fun, next)
+		end
+
+		defp product_iter(a, b, _fun, _next) when a > b, do: 1
+
+		defp product_iter(a, b, fun, next) do
+			fun.(a) *
+				product_iter(next.(a), b, fun, next)
+		end
+
+		def factorial(n) do
+			product(1, n, &(&1), &(&1 + 1))
+		end
 	end
 end
