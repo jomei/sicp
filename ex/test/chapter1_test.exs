@@ -30,4 +30,8 @@ defmodule Chapter1Test do
 	test "ex_31" do
 		assert Chapter1.Ex31.factorial(3) == 6
 	end
+
+	test "ex_37" do
+		assert Chapter1.Ex37.run(3) == 1.5
+	end
 end

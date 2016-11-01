@@ -107,4 +107,22 @@ defmodule Chapter1 do
 			product(1, n, &(&1), &(&1 + 1))
 		end
 	end
+
+	defmodule Ex37 do
+
+		def run(k) do
+			n_fn = fn _i -> 1  end
+			cont_frac(n_fn, n_fn, k)
+		end
+
+		def cont_frac(n_fn, d_fn, k) do
+			cont_frac_iter(n_fn, d_fn, k , 1)
+		end
+
+		defp cont_frac_iter(_n_fn, d_fn, k, iter) when k == iter, do: d_fn.(iter)
+
+		defp cont_frac_iter(n_fn, d_fn, k, iter) do
+			d_fn.(iter - 1) + n_fn.(iter) / cont_frac_iter(n_fn, d_fn, k, iter + 1)
+		end
+	end
 end
