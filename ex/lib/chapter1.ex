@@ -109,7 +109,6 @@ defmodule Chapter1 do
 	end
 
 	defmodule Ex37 do
-
 		def run(k) do
 			n_fn = fn _i -> 1  end
 			cont_frac(n_fn, n_fn, k)
@@ -123,6 +122,18 @@ defmodule Chapter1 do
 
 		defp cont_frac_iter(n_fn, d_fn, k, iter) do
 			d_fn.(iter - 1) + n_fn.(iter) / cont_frac_iter(n_fn, d_fn, k, iter + 1)
+		end
+	end
+
+	defmodule Ex38 do
+		def eiler(k) do
+			n_fn = fn _i -> 1 end
+			d_fn = fn 
+				(i) when rem(i - 1, 3) == 0 -> div(i - 1, 3) * 2
+				(_i) -> 1
+			end
+
+			Ex37.cont_frac n_fn, d_fn, k
 		end
 	end
 end

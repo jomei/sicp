@@ -34,4 +34,8 @@ defmodule Chapter1Test do
 	test "ex_37" do
 		assert Chapter1.Ex37.run(3) == 1.5
 	end
+
+	test "ex_38" do
+		assert Chapter1.Ex38.eiler(6) == 2.75
+	end
 end
