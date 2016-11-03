@@ -136,4 +136,32 @@ defmodule Chapter1 do
 			Ex37.cont_frac n_fn, d_fn, k
 		end
 	end
+
+	defmodule Ex39 do
+		def tangens(x, k) do
+			n_fn = fn 
+				(1) -> -1 * x
+				(_i) -> -1 * x * x 
+		 	end
+
+		 	d_fn = fn
+		 		1 ->  1
+		 		i -> 2 * i - 1
+		 	end
+
+		 	Ex37.cont_frac n_fn, d_fn, k
+		end
+	end
+
+	defmodule Ex41 do
+		def double(f, arg) do
+			arg
+			|> (f).()
+			|> (f).()
+		end
+
+		def run do
+			double(&(&1 + 1), 1)
+		end
+	end
 end
