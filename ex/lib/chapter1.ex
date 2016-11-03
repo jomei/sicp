@@ -176,4 +176,22 @@ defmodule Chapter1 do
 			compose(f1, f2).(x)
 		end
 	end
+
+	defmodule Ex43 do
+		def repeat(f, n) do
+			repeat_iter f, f, n, 1
+		end
+
+		defp repeat_iter(_start_f, f, n, count) when n == count, do: f
+
+		defp repeat_iter(start_f, f, n, count) do
+
+			repeat_iter(start_f, Ex42.compose(start_f, f), n, count + 1)
+		end
+
+		def run(x) do
+			f = &(&1 * &1)
+			repeat(f, 2).(x)
+		end
+	end
 end
