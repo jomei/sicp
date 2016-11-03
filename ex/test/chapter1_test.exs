@@ -46,4 +46,8 @@ defmodule Chapter1Test do
 	test "ex_41" do
 		assert Chapter1.Ex41.run() == 3
 	end
+
+	test "ex_42" do
+		assert Chapter1.Ex42.run(6) == 49
+	end
 end

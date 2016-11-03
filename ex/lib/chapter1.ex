@@ -164,4 +164,16 @@ defmodule Chapter1 do
 			double(&(&1 + 1), 1)
 		end
 	end
+
+	defmodule Ex42 do
+		def compose(f1, f2) do
+			fn arg -> f1.(f2.(arg))  end
+		end
+
+		def run(x) do
+			f1 = &(&1 * &1)
+			f2 = &(&1 + 1)
+			compose(f1, f2).(x)
+		end
+	end
 end
