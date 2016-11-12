@@ -185,13 +185,22 @@ defmodule Chapter1 do
 		defp repeat_iter(_start_f, f, n, count) when n == count, do: f
 
 		defp repeat_iter(start_f, f, n, count) do
-
 			repeat_iter(start_f, Ex42.compose(start_f, f), n, count + 1)
 		end
 
 		def run(x) do
 			f = &(&1 * &1)
 			repeat(f, 2).(x)
+		end
+	end
+
+	defmodule Ex44 do
+		def smooth(f) do
+			fn x, dx -> (f.(x - dx) + f.(x) + f.(x + dx)) / 3  end
+		end
+
+		def n_smooth(f, n) do
+			Ex43.repeat(smooth(f), n)
 		end
 	end
 end
