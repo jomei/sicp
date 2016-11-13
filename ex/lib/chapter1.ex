@@ -203,4 +203,21 @@ defmodule Chapter1 do
 			Ex43.repeat(smooth(f), n)
 		end
 	end
+
+	defmodule Ex46 do
+		def iterative_improve(is_enough_fn, improve_fn) do
+			fn x ->  
+				improve_iter(is_enough_fn, improve_fn, x)
+			end
+		end
+
+		defp improve_iter(is_enough_fn, improve_fn, x) do
+			improved = improve_fn.(x)
+			if is_enough_fn.(improved) do
+				improved
+			else
+				improve_iter(is_enough_fn, improve_fn, improved)
+			end
+		end
+	end
 end
